@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Pokémon Card Binder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-glow"></div>
+
+<header class="hero">
+  <img class="mascot bulba" src="assets/bulbasaur_corner.png" alt="Bulbasaur decoration">
+  <div class="hero-content">
+    <div class="eyebrow">OUR FAN-MADE SET</div>
+    <h1>Card Binder</h1>
+    <p>Collect • Create • Remember</p>
+    <div class="set-stats">
+      <span><b>270</b> TOTAL CARDS</span><span>•</span>
+      <span><b>201</b> REGULAR</span><span>•</span>
+      <span><b>59</b> SECRET RARES</span><span>•</span>
+      <span><b>10</b> PROMOS</span>
+    </div>
+  </div>
+  <img class="mascot snorlax" src="assets/snorlax_corner.png" alt="Snorlax decoration">
+</header>
+
+<main class="app">
+  <div class="connection" id="connection"><span class="dot"></span><span id="connectionText">Connecting to shared collection…</span></div>
+
+  <nav class="tabs">
+    <button class="tab active" data-set="main">◉ <span>Main Set</span><small>201</small></button>
+    <button class="tab" data-set="secret">✦ <span>Secret Rares</span><small>59</small></button>
+    <button class="tab" data-set="promo">♛ <span>Promos</span><small>10</small></button>
+  </nav>
+
+  <section class="toolbar">
+    <div>
+      <h2 id="sectionTitle">Main Set <span>(001–201)</span></h2>
+      <p id="sectionSub">Your regular cards</p>
+    </div>
+    <div class="actions">
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search card number or name…"></label>
+      <button class="primary" id="uploadBtn">＋ Upload Card</button>
+    </div>
+  </section>
+
+  <section class="progress-row">
+    <div class="progress-info"><strong id="completed">0 / 201</strong> completed</div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <strong id="percent">0%</strong>
+  </section>
+
+  <section class="binder" id="grid"></section>
+</main>
+
+<div class="modal hidden" id="modal">
+  <div class="modal-card">
+    <button class="close" id="closeModal">×</button>
+    <h3 id="modalTitle">Add Card</h3>
+    <p class="modal-help">This card is saved to the shared online collection.</p>
+    <label>Card slot
+      <select id="slotSelect"></select>
+    </label>
+    <label>Card name (optional)
+      <input id="cardName" type="text" placeholder="e.g. Bulbasaur">
+    </label>
+    <label>Card note (optional)
+      <input id="cardNote" type="text" placeholder="e.g. First card we made">
+    </label>
+    <label class="file-drop">
+      <input id="fileInput" type="file" accept="image/*">
+      <span>📷 Choose card image</span>
+      <small>Images are resized before being saved to keep the collection fast.</small>
+    </label>
+    <button class="primary wide" id="saveCard">Save Card</button>
+    <button class="danger wide hidden" id="removeCard">Remove Card</button>
+  </div>
+</div>
+
+<div class="viewer hidden" id="viewer">
+  <button class="viewer-close" id="viewerClose">×</button>
+  <img id="viewerImg" alt="">
+  <div id="viewerCaption"></div>
+</div>
+
+<div class="toast hidden" id="toast"></div>
+
+<footer>
+  <span>Shared collection • Changes sync automatically</span>
+  <div>
+    <button id="exportBtn">Export backup</button>
+    <button id="importBtn">Import backup</button>
+    <input id="importFile" type="file" accept=".json" hidden>
+  </div>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
