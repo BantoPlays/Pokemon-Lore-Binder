@@ -7,7 +7,7 @@ import { firebaseConfig } from "./firebase-config.js";
 
 const SETS = {
   main:   {label:"Main Set", total:201, prefix:"", sub:"Your regular cards"},
-  secret: {label:"Secret Rares", total:59, prefix:"S", sub:"Your secret rare cards"},
+  secret: {label:"Secret Rares", total:39, prefix:"S", sub:"Your secret rare cards"},
   promo:  {label:"Promos", total:10, prefix:"P", sub:"Your promo cards"}
 };
 
